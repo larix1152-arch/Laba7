@@ -1,0 +1,207 @@
+
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Сучасні технології вебдизайну</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Підключення jQuery UI -->
+    <link rel="stylesheet"
+    href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <h1>Світ сучасного вебдизайну</h1>
+        <p>Створюємо красиві та сучасні вебсторінки</p>
+    </header>
+
+    <nav>
+        <a href="#about">Про сайт</a>
+        <a href="#features">Можливості</a>
+        <a href="#images">Галерея</a>
+        <a href="#jquery-ui">jQuery UI</a>
+        <a href="#contacts">Контакти</a>
+    </nav>
+
+    <main>
+
+        <section id="about">
+            <h2>Про сучасний вебдизайн</h2>
+
+            <p>
+                HTML5 та CSS3 дозволяють створювати привабливі,
+                зручні та адаптивні вебсторінки.
+            </p>
+        </section>
+
+        <section id="features">
+            <h2>Можливості CSS3</h2>
+
+            <div class="cards">
+
+                <div class="card">
+                    <h3>Градієнти</h3>
+                    <p>Плавні переходи між кольорами.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Тіні</h3>
+                    <p>Створення об'ємних елементів.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Анімація</h3>
+                    <p>Додавання ефектів руху.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="images">
+            <h2>Галерея зображень</h2>
+
+            <div class="image-gallery">
+
+                <div class="image-item">
+                    <img src="images/photo.jpg"
+                    alt="Растрове зображення">
+
+                    <p>Растрове зображення JPG</p>
+                </div>
+
+                <div class="image-item">
+                    <img src="images/icon.svg"
+                    alt="Векторне зображення">
+
+                    <p>Векторне зображення SVG</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Елементи jQuery UI -->
+        <section id="jquery-ui">
+
+            <h2>Інтерактивні елементи jQuery UI</h2>
+
+            <p>
+                Приклади використання інтерактивних компонентів
+                бібліотеки jQuery UI.
+            </p>
+
+            <!-- 1. Accordion -->
+            <h3>1. Аккордеон</h3>
+
+            <div id="accordion">
+
+                <h3>Що таке HTML?</h3>
+                <div>
+                    <p>
+                        HTML — мова розмітки, яка використовується
+                        для створення структури вебсторінок.
+                    </p>
+                </div>
+
+                <h3>Для чого потрібен CSS?</h3>
+                <div>
+                    <p>
+                        CSS відповідає за зовнішній вигляд сторінки:
+                        кольори, шрифти та розташування елементів.
+                    </p>
+                </div>
+
+                <h3>Що таке JavaScript?</h3>
+                <div>
+                    <p>
+                        JavaScript додає вебсторінкам інтерактивність
+                        та дозволяє реагувати на дії користувача.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- 2. Slider -->
+            <h3>2. Інтерактивний слайдер</h3>
+
+            <p>Перемістіть повзунок, щоб змінити значення:</p>
+
+            <div class="slider-container">
+                <div id="slider"></div>
+                <span id="slider-value">50</span>
+            </div>
+
+            <!-- 3. Datepicker -->
+            <h3>3. Календар вибору дати</h3>
+
+            <p>Оберіть потрібну дату:</p>
+
+            <input type="text"
+            id="datepicker"
+            placeholder="Натисніть для вибору дати">
+
+        </section>
+
+        <section id="contacts">
+            <h2>Контакти</h2>
+
+            <p>
+                Дякуємо за відвідування нашої сторінки!
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Лабораторна робота №7 | JavaScript та бібліотека jQuery UI</p>
+    </footer>
+
+    <!-- Підключення JavaScript-бібліотек -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.min.js"></script>
+
+    <!-- Налаштування jQuery UI -->
+    <script>
+        $(function () {
+
+            // Налаштування аккордеона
+            $("#accordion").accordion({
+                collapsible: true,
+                heightStyle: "content"
+            });
+
+            // Налаштування слайдера
+            $("#slider").slider({
+                min: 0,
+                max: 100,
+                value: 50,
+
+                slide: function (event, ui) {
+                    $("#slider-value").text(ui.value);
+                }
+            });
+
+            // Налаштування календаря
+            $("#datepicker").datepicker({
+                dateFormat: "dd.mm.yy",
+                showAnim: "fadeIn"
+            });
+
+        });
+    </script>
+
+</body>
+</html>
